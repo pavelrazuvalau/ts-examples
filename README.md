@@ -1,1 +1,1 @@
-# TypeScript features examples
+# TypeScript usage examples
