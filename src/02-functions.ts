@@ -44,23 +44,21 @@ function anyType(): void {
 
 //--------------------------------------------------
 
-function args(): void {
-  function logName(firstName: string, lastName?:string): void {
-    console.log(`Name: ${firstName} ${lastName}`);
-  }
-
-  // logName();
-  logName('a');
-  logName('a', 'b');
-  // logName('a', 'b', 'c');
-
-  function logAll(first: string, ...other: any[]): void {
-    console.log(first);
-    other.forEach( (a) => console.log(a.slice(-2)) );
-  }
-
-  logAll('Test', 1, 2, '3', 4, '5');
+function logName(firstName: string, lastName?: string): void {
+  console.log(`Name: ${firstName} ${lastName}`);
 }
+
+// logName();
+logName('a');
+logName('a', 'b');
+// logName('a', 'b', 'c');
+
+function logAll(first: string, ...other: any[]): void {
+  console.log(first);
+  other.forEach( (a) => console.log(a.slice(-2)) );
+}
+
+logAll('Test', 1, 2, '3', 4, '5');
 
 //--------------------------------------------------
 
@@ -75,18 +73,10 @@ function defaultArgs(a = 1, b = 2) { /* */ }
 defaultArgs();
 defaultArgs(1);
 defaultArgs(1, 2);
-// defaultArgs('1', 2);
+// defaultArgs('1', 2); // Error
 
 function sayHi(name: string, text: string = 'How are you?'): string {
   return `Hi ${name}! ${text}`;
-}
-
-//--------------------------------------------------
-
-function objectOrPrimitive(): { [key: string]: string } | number | string {
-  // return 2;
-  return 'str';
-  // return { a: '1' };
 }
 
 const arrow = (a: number, b: number): number => a + b;
@@ -98,6 +88,15 @@ function error(): never {
   throw new Error();
 }
 
+//--------------------------------------------------
+
+// "Type coersion" 
 function foo(): { name: string, description: string } {
   return {} as any;
 }
+
+function performActionFromThirdPartyLibrary(): unknown {
+  return 5;
+}
+
+const resultOfTheAction: number = performActionFromThirdPartyLibrary() as number;

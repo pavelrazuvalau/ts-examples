@@ -16,7 +16,7 @@ let octal: number = 0o444;
 
 // String
 let firstName: string = 'Andrew';
-let lastName: string = 'Wiseau';
+let lastName: string = 'Anthony';
 let greetings: string = `Hello ${firstName} ${lastName}!`;
 
 // firstName = 101; // Error

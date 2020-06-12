@@ -11,7 +11,7 @@ export interface ListItem<T> {
 }
 const numberListItem: ListItem<number> = { data: 2, desc: '' };
 
-// -------
+//--------------------------------------------------
 
 enum DaysOfWeek {
   Sun, // 0
