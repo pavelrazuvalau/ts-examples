@@ -86,19 +86,19 @@ abstract class Vehicle {
     console.log(this.name, this.wheelsCount, this.engine);
   }
 
-  abstract drive(): void // must be implemented
+  abstract startEngine(): void // must be implemented
 }
 
 class Car extends Vehicle {
   constructor(public brand: string) { super('Car', 4, 'Four-Stroke') }
 
-  drive() { console.log('I\'m driving the car', this.brand) }
-  sell() { console.log('selling the car', this.brand) }
+  startEngine() { console.log('Starting the engine', this.brand) }
+  drive() { console.log('Driving the car', this.brand) }
 }
 
 let myVehicle: Vehicle;
 // myVehicle = new Vehicle('name', 0, 'empty'); // Error
 myVehicle = new Car('Mazda');
 myVehicle.print();
-myVehicle.drive();
-// myVehicle.sell(); // Error
+myVehicle.startEngine();
+// myVehicle.drive(); // Error

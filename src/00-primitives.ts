@@ -20,12 +20,3 @@ let lastName: string = 'Wiseau';
 let greetings: string = `Hello ${firstName} ${lastName}!`;
 
 // firstName = 101; // Error
-
-// Multiple types
-
-let smth: number | string | boolean = 'some stuff';
-smth = 34;
-smth = false;
-smth = 'string';
-// smth = {}; // Error
-

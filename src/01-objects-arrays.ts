@@ -13,6 +13,7 @@ let mapLike: { [key: string]: string } = {
 };
 
 let array: number[] = [1, 2, 3, 4];
+let anotherArray: Array<number> = [1, 2, 3, 4];
 // array.push('5'); // Error
 
 let tuple: [number, string] = [12, 'September'];

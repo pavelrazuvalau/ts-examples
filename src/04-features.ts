@@ -2,25 +2,16 @@ function makeArr<T>(arg: T): T[] {
   return [arg];
 };
 
-console.log(makeArr<string>('abc'), makeArr<number>(123));
+const arrayOfString: string[] = makeArr<string>('abc');
+const arrayOfNumber: number[] = makeArr<number>(123);
 
-interface List<T> {
+export interface ListItem<T> {
   data: T,
   desc: string,
 }
-
-type StringList = List<string>;
-
-class Abc<T> {
-  data: T;
-}
-
-let bar = new Abc<number>();
+const numberListItem: ListItem<number> = { data: 2, desc: '' };
 
 // -------
-
-type state = 'on' | 'off';
-let someStatus: state = 'on';
 
 enum DaysOfWeek {
   Sun, // 0
@@ -40,8 +31,8 @@ enum CatNames {
   Chloe, // 6
   Sophie = 10,
   // .... // 11, 12, ...
-  Barsik = 'justCat',
-  Murzik = 1, // Error
+  Simba = 'justCat',
+  Misty = 1, // Error
 };
 
 interface Cat {
@@ -49,7 +40,7 @@ interface Cat {
 }
 
 const cat: Cat = {
-  name: CatNames.Masya,
+  name: CatNames.Misty,
 }
 
 console.log(CatNames[0], CatNames.Lucy); // Masya, 5
